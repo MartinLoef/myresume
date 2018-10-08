@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_jx1nCtUheTYP6XUPOfhPR");
+       })();
+    </script>
     <title>Martin</title>
 </head>
 <body>
@@ -53,15 +59,23 @@
             </div>
         </div>
         <div class="center-form">
-            <form>
+            <form onsubmit="return sendMail(this);" method="POST">
                 <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
                 <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
-                <textarea rows="5" name="project summary" class="form-control" id="projectsummary" placeholder="Project Description"></textarea>
-                <button type="submit" class="btn btn-summary center-block">Send Project Request</button>
-                
+                <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+                <button type="submit" class="btn btn-secondary center-block">Send Project Request</button>
             </form>
-            
         </div>
+        <!--<div class="center-form">-->
+        <!--    <form onsubmit="return sendMail(this);" method="POST">-->
+        <!--        <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Name" required/>-->
+        <!--        <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>-->
+        <!--        <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description"></textarea>-->
+        <!--        <button type="submit" class="btn btn-summary center-block">Send Project Request</button>-->
+                
+        <!--    </form>-->
+            
+        <!--</div>-->
     </section>
     <footer class="container-fluid">
         <div id="footer-details" class="row">
@@ -95,7 +109,8 @@
                 </p>
             </div>
         </div>
-
+    
     </footer>
+    <script src="assets/js/sendEmail.js"></script>
 </body>
 </html>
